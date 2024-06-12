@@ -1,3 +1,16 @@
 # Tusk
 
-A simple cli for creating a starting point for your `postgresql.conf` settings based on system resources. You can optionally pass alternative "limiter" values if you aren't intending to give postgres the entire system.
+## Config
+
+```toml
+# ~/.tusk/config.toml
+default = "local"
+
+[[connection]]
+name = "local"
+user = "postgres"
+password = "password"
+host = "locahost"
+port = 5432
+database = "test"
+```
