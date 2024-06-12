@@ -18,7 +18,11 @@ fn print_version() -> &'static str {
 #[command(name = "tusk")]
 #[command(version = print_version(), about = "Postgres tuning and utility cli", long_about = None)]
 pub struct Cli {
-    #[arg(short, long)]
+    #[arg(
+        short,
+        long,
+        help = "Connection profile to use. Will use `default` in ~/.tusk/config.toml"
+    )]
     pub profile: Option<String>,
     #[command(subcommand)]
     command: Commands,
